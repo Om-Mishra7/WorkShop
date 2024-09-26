@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task App</title>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+      <th>Task Name</th>
+    </tr>
+    </thead>
+    <tbody id="tasks">
+
+    </tbody>
+  </table>
+
+  <form>
+    <input type="text" name="task" id="task-input">
+    <button type="submit">Add Task</button>
+  </form>
+
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var task = document.querySelector('#task-input').value;
+      var tasks = document.querySelector('#tasks');
+      var newTask = document.createElement('tr');
+      newTask.innerHTML = '<td>' + task + '</td>';
+      tasks.appendChild(newTask);
+    });
+  </script>
+  
+</body>
+</html>
